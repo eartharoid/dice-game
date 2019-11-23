@@ -1,0 +1,521 @@
+/* -----------------------------------------------------
+  Material Design Buttons
+  https://codepen.io/rkchauhan/pen/NNKgJY
+  By: Ravikumar Chauhan
+  Find me on -
+  Twitter: https://twitter.com/rkchauhan01
+  Facebook: https://www.facebook.com/ravi032chauhan
+  GitHub: https://github.com/rkchauhan
+  CodePen: https://codepen.io/rkchauhan
+-------------------------------------------------------- */
+/* -----------------------------------------------------
+  Body
+-------------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  color: #646360;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #eee;
+}
+
+*, *::after, *::before {
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  color: #03a9f4;
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------
+    Main
+-------------------------------------------------------- */
+main {
+  width: 100%;
+  max-width: 940px;
+  margin: 1.4rem auto;
+}
+main section {
+  display: block;
+  margin-bottom: 1.4rem;
+  padding: 1.2rem;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.157);
+}
+main section:last-child {
+  margin-bottom: 0;
+}
+main section .heading {
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+main section .wrap {
+  overflow: hidden;
+  display: block;
+  margin: 1rem 0 0.8rem;
+  text-align: center;
+}
+main section .wrap .holder {
+  float: left;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+main section .wrap .holder:last-child {
+  margin-right: 0;
+}
+main section .wrap .holder.col-3 {
+  width: 32.6666666667%;
+}
+main section .wrap .holder.col-3:nth-child(n) {
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+main section .wrap .holder.col-3:nth-child(3n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+main section .wrap .holder.col-4 {
+  width: 24.25%;
+}
+main section .wrap .holder.col-4:nth-child(n) {
+  margin-right: 1%;
+  margin-bottom: 1%;
+}
+main section .wrap .holder.col-4:nth-child(4n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+main section .wrap .holder .demo {
+  min-height: 120px;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+main section .wrap .holder .captions {
+  padding: 8px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 13px;
+  font-weight: bold;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 860px) {
+  main section .wrap .holder.col-4 {
+    width: 32.6666666667%;
+  }
+  main section .wrap .holder.col-4:nth-child(n) {
+    margin-right: 1%;
+    margin-bottom: 1%;
+  }
+  main section .wrap .holder.col-4:nth-child(3n) {
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+@media only screen and (max-width: 640px) {
+  main section .wrap .holder {
+    float: none;
+  }
+  main section .wrap .holder.col-3, main section .wrap .holder.col-4 {
+    display: block;
+    width: 100%;
+  }
+  main section .wrap .holder.col-3:nth-child(n), main section .wrap .holder.col-4:nth-child(n) {
+    margin: 0;
+    margin-bottom: 14px;
+  }
+}
+@media only screen and (max-width: 960px) {
+  main {
+    padding: 0 1.5%;
+  }
+}
+
+/* -----------------------------------------------------
+   Header
+-------------------------------------------------------- */
+header {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  text-align: center;
+  background-color: #FFF;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+header h2 {
+  margin: 0;
+  padding: 25px 0;
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+/* -----------------------------------------------------
+    Footer
+-------------------------------------------------------- */
+footer {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  min-height: 80px;
+  background-color: #FFF;
+  border-top: 1px solid #EEE;
+}
+footer .row {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+footer .footer-content {
+  margin: 0 8px;
+  padding: 25px 0 18px;
+  text-align: center;
+}
+footer .footer-content span {
+  color: rgba(0, 0, 0, 0.525);
+  font-size: 0.857em;
+  margin-right: 5px;
+}
+@media only screen and (max-width: 768px) {
+  footer span {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+/* ----------------------------------------------------------------------
+  Material Design Raised Buttons - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.rkmd-btn {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 1.5rem;
+  color: #424242;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: .8px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  vertical-align: middle;
+  white-space: nowrap;
+  outline: none;
+  border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 2px;
+  transition: all .3s ease-out;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.225);
+}
+.rkmd-btn:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.225);
+}
+
+/* ----------------------------------------------------------------------
+  Material Design Fab Buttons - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.rkmd-btn.btn-fab, .rkmd-btn.btn-fab-mini {
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  padding: 0;
+  line-height: normal;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+.rkmd-btn.btn-fab:hover, .rkmd-btn.btn-fab-mini:hover {
+  box-shadow: 0 4px 11px 0px rgba(0, 0, 0, 0.375);
+}
+.rkmd-btn.btn-fab i, .rkmd-btn.btn-fab-mini i {
+  display: inline-block;
+  float: none;
+  width: inherit;
+  margin: 0;
+  font-size: inherit;
+  text-align: center;
+  line-height: none;
+  vertical-align: middle;
+}
+.rkmd-btn.btn-fab {
+  width: 56px;
+  height: 56px;
+  font-size: 28px;
+}
+.rkmd-btn.btn-fab-mini {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+}
+
+/* Buttons Color */
+.rkmd-btn.btn-lightBlue {
+  color: #FFF;
+  background-color: #03a9f4;
+}
+.rkmd-btn.btn-lightBlue:hover {
+  background-color: #23b9fc;
+}
+.rkmd-btn.btn-white {
+  color: #444;
+  background-color: #FFF;
+}
+.rkmd-btn.btn-white:hover {
+  background-color: #fafafa;
+}
+.rkmd-btn.btn-black {
+  color: #bdbdbd;
+  background-color: #111;
+}
+.rkmd-btn.btn-black:hover {
+  background-color: #252525;
+}
+.rkmd-btn.btn-grey {
+  color: #757575;
+  background-color: #f5f5f5;
+}
+.rkmd-btn.btn-grey:hover {
+  background-color: #ebebeb;
+}
+.rkmd-btn.btn-orange {
+  color: #FFF;
+  background-color: #ff9800;
+}
+.rkmd-btn.btn-orange:hover {
+  background-color: #ffa829;
+}
+.rkmd-btn.btn-amber {
+  color: #FFF;
+  background-color: #ffc107;
+}
+.rkmd-btn.btn-amber:hover {
+  background-color: #ffcb30;
+}
+.rkmd-btn.btn-green {
+  color: #FFF;
+  background-color: #4caf50;
+}
+.rkmd-btn.btn-green:hover {
+  background-color: #67bd6a;
+}
+.rkmd-btn.btn-teal {
+  color: #FFF;
+  background-color: #009688;
+}
+.rkmd-btn.btn-teal:hover {
+  background-color: #00bfad;
+}
+.rkmd-btn.btn-cyan {
+  color: #FFF;
+  background-color: #00bcd4;
+}
+.rkmd-btn.btn-cyan:hover {
+  background-color: #00e0fd;
+}
+.rkmd-btn.btn-indigo {
+  color: #FFF;
+  background-color: #3f51b5;
+}
+.rkmd-btn.btn-indigo:hover {
+  background-color: #5869c5;
+}
+.rkmd-btn.btn-deepPurple {
+  color: #FFF;
+  background-color: #673ab7;
+}
+.rkmd-btn.btn-deepPurple:hover {
+  background-color: #7c52c8;
+}
+.rkmd-btn.btn-pink {
+  color: #FFF;
+  background-color: #e91e63;
+}
+.rkmd-btn.btn-pink:hover {
+  background-color: #ed437d;
+}
+.rkmd-btn.btn-red {
+  color: #FFF;
+  background-color: #f44336;
+}
+.rkmd-btn.btn-red:hover {
+  background-color: #f6675d;
+}
+.rkmd-btn.btn-yellow {
+  color: #FFF;
+  background-color: #ffeb3b;
+}
+.rkmd-btn.btn-yellow:hover {
+  background-color: #f8de00;
+}
+.rkmd-btn.btn-lime {
+  color: #FFF;
+  background-color: #cddc39;
+}
+.rkmd-btn.btn-lime:hover {
+  background-color: #bac923;
+}
+.rkmd-btn.btn-brown {
+  color: #FFF;
+  background-color: #795548;
+}
+.rkmd-btn.btn-brown:hover {
+  background-color: #936757;
+}
+
+/* Raised Buttons Size (Not work in Fab Buttons) */
+.rkmd-btn.btn-lg {
+  height: 48px;
+  line-height: 48px;
+}
+.rkmd-btn.btn-sm {
+  height: 30px;
+  padding: 0 1rem;
+  line-height: 30px;
+  font-size: 12px;
+}
+.rkmd-btn.btn-xs {
+  height: 24px;
+  padding: 0 .4rem;
+  line-height: 24px;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: .2px;
+}
+
+/* Raised Buttons Types */
+.rkmd-btn.disabled, .rkmd-btn[disabled] {
+  cursor: default !important;
+  color: #9e9e9e !important;
+  box-shadow: none !important;
+}
+.rkmd-btn.disabled:not(.btn-flat), .rkmd-btn[disabled]:not(.btn-flat) {
+  background-color: #cdcdcd !important;
+}
+.rkmd-btn.disabled:not(.btn-flat):hover, .rkmd-btn[disabled]:not(.btn-flat):hover {
+  background-color: #cdcdcd !important;
+}
+.rkmd-btn.btn-flat {
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.rkmd-btn.btn-flat:hover {
+  background-color: #cecece !important;
+  box-shadow: none !important;
+}
+.rkmd-btn.btn-flat.disabled:hover, .rkmd-btn.btn-flat[disabled]:hover {
+  background-color: transparent !important;
+}
+.rkmd-btn.btn-link {
+  color: #3949ab !important;
+  box-shadow: none !important;
+  background-color: transparent !important;
+}
+.rkmd-btn.btn-link:hover {
+  text-decoration: underline !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.rkmd-btn.btn-link.disabled, .rkmd-btn.btn-link[disabled] {
+  color: #9fa8da !important;
+  text-decoration: underline !important;
+  background-color: transparent !important;
+}
+.rkmd-btn.btn-link.disabled:hover, .rkmd-btn.btn-link[disabled]:hover {
+  background-color: transparent !important;
+}
+.rkmd-btn i {
+  float: left;
+  width: auto;
+  height: auto;
+  margin-right: 10px;
+  font-size: 1.3rem;
+  line-height: inherit;
+}
+.rkmd-btn i.right {
+  float: right !important;
+  margin: 0;
+  margin-left: 10px;
+}
+
+/* ----------------------------------------------------------------------
+  Material Design Ripple Effect - by Ravikumar Chauhan
+------------------------------------------------------------------------- */
+.ripple-effect {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  z-index: 1;
+}
+.ripple-effect .ripple {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  pointer-events: none;
+}
+.ripple-effect.ripple-dark .ripple {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+.ripple-effect.ripple-red .ripple {
+  background: rgba(244, 67, 54, 0.725) !important;
+}
+.ripple-effect.ripple-orange .ripple {
+  background: rgba(255, 152, 0, 0.725) !important;
+}
+.ripple-effect.ripple-yellow .ripple {
+  background: rgba(255, 235, 59, 0.725) !important;
+}
+.ripple-effect.ripple-green .ripple {
+  background: rgba(76, 175, 80, 0.725) !important;
+}
+.ripple-effect.ripple-purple .ripple {
+  background: rgba(156, 39, 176, 0.725) !important;
+}
+.ripple-effect.ripple-teal .ripple {
+  background: rgba(0, 150, 136, 0.725) !important;
+}
+.ripple-effect.ripple-pink .ripple {
+  background: rgba(233, 30, 99, 0.725) !important;
+}
+.ripple-effect .animated {
+  -webkit-animation: ripple 0.6s linear;
+          animation: ripple 0.6s linear;
+}
+@-webkit-keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+  }
+}

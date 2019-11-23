@@ -1,0 +1,158 @@
+<!--
+################################################################################
+
+EARTHAROID / PERSONAL WEBSITE : DEV HUB - DEV PLAYGROUND
+EARTHAROID.ME (https://dev.eartharoid.me/playground/dice)
+GNU GPLv3 : license.txt / https://choosealicense.com/licenses/gpl-3.0/
+COPYRIGHT (C) - EARTHAROID (TM) [2019 ->]
+BY ISAAC SAUNDERS
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+DICE GAME / SCHOOL (COMPUTER SCIENCE) PROJECT
+=============================================
+Task: Write the code for the dice game flowchart shown
+***
+Already made a text-based python version - this is the pretty web version.
+
+################################################################################
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eartharoid | Dev : Dice Game</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="https://eartharoid.me/assets/img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="material.css" />
+  <link rel="stylesheet" href="odometer-theme-default.css" />
+  <script src="odometer.min.js"></script>
+
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway|Quicksand');
+  :root {
+    font-family: 'Montserrat', sans-serif;
+    --primary: #009999;
+    --ligher: #1abc9c;
+    --darker: #16a085;
+    color: #5d5d5d;
+  }
+  body {
+    margin: 3%;
+    background: #eee;
+    text-align: center;
+  }
+  h1, h2, h3 {
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    color: var(--darker);
+  }
+  ::-moz-selection {
+    color: white;
+    background: var(--ligher);
+  }
+
+  ::selection {
+    color: white;
+    background: var(--ligher);
+  }
+  .odometer {
+    font-size: 5em;
+    color: #5d5d5d;
+    margin: 2%;
+    padding: 25px 30px;;
+    background-color: #e9e9e9;
+    border-radius: 5px;
+    font-family: 'Quicksand', sans-serif;
+  }
+  .noSelect {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+  }
+  a {
+  color: var(--ligher);
+  text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  #rollButton {
+    /* background-color: var(--primary); */
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800px;
+    letter-spacing: 0.08em;
+  }
+  #restart {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.08em;
+    visibility: hidden;
+  }
+  #end {
+    visibility: hidden;
+  }
+  #message {
+    color: var(--darker);
+  }
+  .note {
+    color: var(--ligher);
+  }
+  </style>
+
+</head>
+<body>
+  <div id="container">
+    <h1>Dice Game</h1>
+    <p><a href="https://github.com/eartharoid" target="_blank" class="note">GitHub</a><br><b>A simple dice game</b><br><i>for a (useless) school project</i></p>
+    <span class="odometer noSelect" id="die1">0</span>
+    <span class="odometer noSelect" id="die2">0</span>
+    <p id="message"><b>Score: </b> 0<p>
+      <p id="end">Both die rolled the same number; game over.</p>
+
+    <br>
+    <button class="rkmd-btn btn-lightBlue ripple-effect" id="rollButton" onClick="roll()">ROLL</button><br><br>
+    <button class="rkmd-btn btn-green ripple-effect" id="restart" onClick="location.reload(); ">RESTART</button>
+  </div>
+
+
+  <script>
+    const die1 = document.getElementById('die1');
+    const die2 = document.getElementById('die2');
+    const text = document.getElementById('message');
+    const btn = document.getElementById('rollButton');
+    var total = 0;
+
+    function add(x) {
+      return total = total + x;
+    }
+
+    function roll() {
+      let num1 = Math.floor((Math.random() * 6) + 1);
+      let num2 = Math.floor((Math.random() * 6) + 1);
+      die1.innerHTML = num1;
+      die2.innerHTML = num2;
+      
+
+      if(num1 == num2) {
+        // text.innerHTML = "Both die rolled the same number; <b>game over.</b>";
+        text.innerHTML = `<b>Final Score: </b> ${total}`;
+        document.getElementById('end').style.visibility = "visible";
+        btn.setAttribute("disabled", "");
+        document.getElementById('restart').style.visibility = "visible";
+        console.log(`${num1} and ${num2}`)
+        console.log(`Game over; final score: ${total}`)
+      } else {
+        add(num1 + num2)
+        text.innerHTML = `<b>Score: </b> ${total}`;
+        console.log(`${num1} and ${num2} (+${num1 + num2}, ${total})`)
+      }
+
+    }
+  </script>
+
+</body>
+</html>
